@@ -1,4 +1,4 @@
-const Basch = require('./bash');
+const Bash = require('./bash');
 const { RTMClient } = require('@slack/client');
 
 // An access token (from your Slack app or custom integration - usually xoxb)
@@ -30,7 +30,7 @@ rtm.on('message', (message) => {
       }
     }
 
-    Basch.execute(text.join(' '))
+    Bash.execute(text.join(' '))
       .then(stdout => {
         return rtm.sendMessage(stdout, message.channel)
       })

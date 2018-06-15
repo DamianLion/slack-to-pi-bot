@@ -1,6 +1,6 @@
 const exec = require('child_process').exec;
 
-class Basch {
+class Bash {
   static execute (command) {
     return new Promise((fulfill, reject) => {
       exec(command, function(err, stdout, stderr) {
@@ -9,13 +9,8 @@ class Basch {
         }
         return fulfill(stdout);
       });
-
-      /*statement.on('exit', function (code) {
-        fulfill(code);
-      });*/
-
     });
   }
 }
 
-module.exports = Basch;
+module.exports = Bash;
